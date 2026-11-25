@@ -1,0 +1,26 @@
+diff --git a/blutter/CMakeLists.txt b/blutter/CMakeLists.txt
+index 9751cd6..b889131 100644
+--- a/blutter/CMakeLists.txt
++++ b/blutter/CMakeLists.txt
+@@ -62,7 +62,7 @@ if (MSVC)
+ 		set_target_properties(${BINNAME} PROPERTIES VS_DEBUGGER_COMMAND_ARGUMENTS "${DBG_CMD}")
+ 	else()
+ 		# assume Ninja
+-		set(cc_opts /Oy /GR- /sdl- /Oi /GL /Gy /Zc:wchar_t /Zc:inline)
++		set(cc_opts /Oy /GR- /sdl- /Oi /GL /Gy /Zc:wchar_t /Zc:inline /Zc:preprocessor)
+ 		target_link_options(${BINNAME} PRIVATE /LTCG /OPT:REF /OPT:ICF)
+ 	endif()
+ else()
+diff --git a/scripts/CMakeLists.txt b/scripts/CMakeLists.txt
+index e755ad8..d1ead20 100644
+--- a/scripts/CMakeLists.txt
++++ b/scripts/CMakeLists.txt
+@@ -89,7 +89,7 @@ if (MSVC)
+ 	# remove compiler RTTI option
+ 	string(REPLACE "/GR" "" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
+ 	set(cc_opts
+-		/Oy /GR- /EHs-c-
++		/Oy /GR- /EHs-c- /Zc:preprocessor
+ 	)
+ else()
+ 	set(cc_opts
