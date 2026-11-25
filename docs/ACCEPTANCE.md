@@ -5,14 +5,14 @@ Trạng thái hiện tại: **chưa đủ điều kiện release**. Đừng ghi 
 | ID | Gate | Kết quả hiện có | Điều kiện đạt cuối cùng |
 |---|---|---|---|
 | A01 | Input integrity | PASS ở bàn giao | Hash đúng, CRC OK, gốc không đổi |
-| A02 | Flutter native menu | NOT DONE | Settings → Language, đủ locale gốc + en/th/lo/km, không mất chức năng |
+| A02 | Flutter native menu | BLOCKED (phiên 2: cần source, xem docs/aot-map.md) | Settings → Language, đủ locale gốc + en/th/lo/km, không mất chức năng |
 | A03 | Apply / persist | NOT RUN Android | Đổi đồng bộ mọi màn hình, kill/restart/reopen, fallback và restore |
 | A04 | Text coverage | DRAFT | Inventory từng màn hình, không còn chuỗi UI không dịch ngoài whitelist, 4 locale duyệt ngữ cảnh |
 | A05 | Images/fonts | DRAFT | Ảnh đúng locale, đủ glyph, không tofu/cắt chữ, không thay biểu tượng |
 | A06 | Blockly desktop | PASS giới hạn stage3/4 | 6 trang, 24 lượt locale, XML mẫu/defaults, restore, no JS exceptions; mở rộng test |
 | A07 | Android WebView | NOT RUN | Locale native đồng bộ, all blocks/menu, save/open/edit, XML và command equivalence, localStorage behavior |
 | A08 | Official package/signing | NOT RUN | zipalign/apksigner PASS, no unapproved entry changes, hash report |
-| A09 | Install / launch | NOT RUN | cài sạch, khởi động, logcat không crash/ANR trên ABI và Android đã cam kết |
+| A09 | Install / launch | APK gốc: chạy trên emulator Android 14 (--abi arm64-v8a); APK mới: NOT RUN | cài sạch, khởi động, logcat không crash/ANR trên ABI và Android đã cam kết |
 | A10 | BLE | NOT RUN | scan, connect, disconnect, reconnect, permissions, disconnect safe state, commands như bản gốc |
 | A11 | Control regression | NOT RUN | mỗi mode/port hiện có, hướng/tốc độ/stop, sensor/path/voice nếu có, test không tải trước |
 | A12 | User data | NOT RUN | chương trình cũ, export/import hoặc save/open nếu app có, không mất dữ liệu do locale |
