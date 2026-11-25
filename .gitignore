@@ -1,0 +1,23 @@
+# Proprietary input, extracted code/assets, builds, historical archives, keys
+/local/
+*.apk
+*.aab
+*.xapk
+*.jks
+*.keystore
+*.pem
+*.p12
+*.pfx
+*.der
+*.key
+*.so
+*.dex
+*.zip
+.env
+.env.*
+__pycache__/
+.venv/
+node_modules/
+/build/
+/dist/
+/reverse-output/
